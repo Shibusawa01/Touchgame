@@ -57,6 +57,50 @@ body {
 }
 
 #btn:active {
-  margin-top: 12px;
+  padding-top: 12px;
   box-shadow: none;
+}
+
+.reset{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  width: 320px;
+  height:60px;
+  font-size:1.6em;
+  padding:0;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin: 30px auto;
+  text-align : center ;
+}
+.reset:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.reset:before,.reset:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.reset:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.reset:hover:before,.reset:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.rst{
+  text-align: center;
 }

@@ -36,7 +36,8 @@
           }else{
             score = "D";
           }
-          alert('あなたのタイムは'+timer.textContent+'です！\n'+'あなたのランクは'+score+'です！');
+          location.reload(true);
+          return confirm('あなたのタイムは'+timer.textContent+'秒です！\n'+'あなたのランクは'+score+'です！\n'+'もう一度プレイしますか？');
         }
       }
     }
