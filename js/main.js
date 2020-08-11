@@ -1,6 +1,7 @@
 'use strict';
 
 {
+  let score;
   class Panel {
     constructor(game) {
       this.game = game;
@@ -10,7 +11,6 @@
         this.check();
       });
     }
-
     getEl() {
       return this.el;
     }
@@ -27,6 +27,16 @@
 
         if (this.game.getCurrentNum() === this.game.getLevel()**2) {
           clearTimeout(this.game.getTimeoutId());
+          if(timer.textContent < 15){
+            score = "A";
+          }else if(timer.textContent < 20){
+            score = "B";
+          }else if(timer.textContent < 30){
+            score = "C";
+          }else{
+            score = "D";
+          }
+          alert('あなたのタイムは'+timer.textContent+'です！\n'+'あなたのランクは'+score+'です！');
         }
       }
     }
@@ -79,8 +89,8 @@
 
     setup(){
       const container = document.getElementById('container');
-      const PANEL_WIDTH = 50;
-      const BOARD_PADDING = 10;
+      const PANEL_WIDTH = 60;
+      const BOARD_PADDING = 12;
       /*50px * 2 + 10px * 2 */
       container.style.width = PANEL_WIDTH * this.level + BOARD_PADDING * 2 + 'px';
     }

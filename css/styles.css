@@ -18,12 +18,13 @@ body {
   padding: 10px;
   background: #fff;
   border-radius: 4px;
+  user-select: none;
 }
 
 #board li {
   background: #00aaff;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin: 5px;
   cursor: pointer;
   border-radius: 4px;
