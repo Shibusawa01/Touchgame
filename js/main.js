@@ -1,7 +1,6 @@
 'use strict';
 
 {
-  let score;
   class Panel {
     constructor(game) {
       this.game = game;
@@ -26,6 +25,7 @@
         this.game.addCurrentNum();
 
         if (this.game.getCurrentNum() === this.game.getLevel() ** 2) {
+          let score;
           clearTimeout(this.game.getTimeoutId());
           if (timer.textContent < 15) {
             score = "A";
