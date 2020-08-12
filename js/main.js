@@ -25,19 +25,19 @@
         this.el.classList.add('pressed');
         this.game.addCurrentNum();
 
-        if (this.game.getCurrentNum() === this.game.getLevel()**2) {
+        if (this.game.getCurrentNum() === this.game.getLevel() ** 2) {
           clearTimeout(this.game.getTimeoutId());
-          if(timer.textContent < 15){
+          if (timer.textContent < 15) {
             score = "A";
-          }else if(timer.textContent < 20){
+          } else if (timer.textContent < 20) {
             score = "B";
-          }else if(timer.textContent < 30){
+          } else if (timer.textContent < 30) {
             score = "C";
-          }else{
+          } else {
             score = "D";
           }
           location.reload(true);
-          return confirm('あなたのタイムは'+timer.textContent+'秒です！\n'+'あなたのランクは'+score+'です！\n'+'もう一度プレイしますか？');
+          return confirm('あなたのタイムは' + timer.textContent + '秒です！\n' + 'あなたのランクは' + score + 'です！\n' + 'もう一度プレイしますか？');
         }
       }
     }
@@ -88,7 +88,7 @@
       this.setup();
     }
 
-    setup(){
+    setup() {
       const container = document.getElementById('container');
       const PANEL_WIDTH = 60;
       const BOARD_PADDING = 12;
@@ -96,7 +96,7 @@
       container.style.width = PANEL_WIDTH * this.level + BOARD_PADDING * 2 + 'px';
     }
 
-    start(){
+    start() {
       if (typeof this.timeoutId !== 'undefined') {
         clearTimeout(timeoutId);
       }
@@ -108,29 +108,29 @@
       this.runTimer();
     }
 
-    runTimer(){
-    const timer = document.getElementById('timer');
-    timer.textContent = ((Date.now() - this.startTime) / 1000).toFixed(2);
+    runTimer() {
+      const timer = document.getElementById('timer');
+      timer.textContent = ((Date.now() - this.startTime) / 1000).toFixed(2);
 
-    this.timeoutId = setTimeout(() => {
-      this.runTimer();
-    }, 10);
-  }
+      this.timeoutId = setTimeout(() => {
+        this.runTimer();
+      }, 10);
+    }
 
-  addCurrentNum(){
-    this.currentNum++;
-  }
+    addCurrentNum() {
+      this.currentNum++;
+    }
 
-  getCurrentNum(){
-    return this.currentNum;
-  }
+    getCurrentNum() {
+      return this.currentNum;
+    }
 
-  getTimeoutId(){
-    return this.timeoutId;
-  }
-  getLevel(){
-    return this.level;
-  }
+    getTimeoutId() {
+      return this.timeoutId;
+    }
+    getLevel() {
+      return this.level;
+    }
   }
   new Game(5);
 }
