@@ -36,12 +36,8 @@
           } else {
             score = "D";
           }
+          location.reload(true);
           return confirm('あなたのタイムは' + timer.textContent + '秒です！\n' + 'あなたのランクは' + score + 'です！\n' + 'もう一度プレイしますか？');
-           if ( return == true ){
-            location.reload(true);
-    }else{
-        location.reload(false);
-    }
         }
       }
     }
